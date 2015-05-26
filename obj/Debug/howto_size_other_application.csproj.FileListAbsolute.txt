@@ -1,0 +1,9 @@
+C:\Users\zhivko\Documents\Visual Studio 2010\Projects\howto_size_other_application\obj\Debug\howto_size_other_application.csproj.GenerateResource.Cache
+C:\Users\zhivko\Documents\Visual Studio 2010\Projects\howto_size_other_application\bin\Debug\TeamViewer Popup Blocker.exe.config
+C:\Users\zhivko\Documents\Visual Studio 2010\Projects\howto_size_other_application\bin\Debug\TeamViewer Popup Blocker.exe
+C:\Users\zhivko\Documents\Visual Studio 2010\Projects\howto_size_other_application\bin\Debug\TeamViewer Popup Blocker.pdb
+C:\Users\zhivko\Documents\Visual Studio 2010\Projects\howto_size_other_application\obj\Debug\TeamViewerPopupBlocker.Properties.Resources.resources
+C:\Users\zhivko\Documents\Visual Studio 2010\Projects\howto_size_other_application\obj\Debug\TeamViewer Popup Blocker.exe
+C:\Users\zhivko\Documents\Visual Studio 2010\Projects\howto_size_other_application\obj\Debug\TeamViewer Popup Blocker.pdb
+C:\Users\zhivko\Documents\Visual Studio 2010\Projects\howto_size_other_application\obj\Debug\TeamViewerPopupBlocker.AboutBox.resources
+C:\Users\zhivko\Documents\Visual Studio 2010\Projects\howto_size_other_application\obj\Debug\TeamViewerPopupBlocker.Form1.resources

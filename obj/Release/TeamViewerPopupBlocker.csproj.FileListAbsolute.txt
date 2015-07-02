@@ -11,3 +11,9 @@ C:\Users\zhivko\Documents\Visual Studio 2010\Projects\howto_size_other_applicati
 C:\Users\zhivko\Documents\Visual Studio 2010\Projects\TeamViewerBlocker\bin\Release\TeamViewer Popup Blocker.exe.config
 C:\Users\zhivko\Documents\Visual Studio 2010\Projects\TeamViewerBlocker\obj\Release\TeamViewer Popup Blocker.exe
 C:\Users\zhivko\Documents\Visual Studio 2010\Projects\TeamViewerBlocker\obj\Release\TeamViewer Popup Blocker.pdb
+C:\Users\zhivko\Documents\Visual Studio 2010\Projects\TeamViewerBlocker\obj\Release\TeamViewerPopupBlocker.AboutBox.resources
+C:\Users\zhivko\Documents\Visual Studio 2010\Projects\TeamViewerBlocker\obj\Release\TeamViewerPopupBlocker.MainForm.resources
+C:\Users\zhivko\Documents\Visual Studio 2010\Projects\TeamViewerBlocker\obj\Release\TeamViewerPopupBlocker.Properties.Resources.resources
+C:\Users\zhivko\Documents\Visual Studio 2010\Projects\TeamViewerBlocker\obj\Release\TeamViewerPopupBlocker.csproj.GenerateResource.Cache
+C:\Users\zhivko\Documents\Visual Studio 2010\Projects\TeamViewerBlocker\bin\Release\TeamViewer Popup Blocker.exe
+C:\Users\zhivko\Documents\Visual Studio 2010\Projects\TeamViewerBlocker\bin\Release\TeamViewer Popup Blocker.pdb

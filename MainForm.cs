@@ -1,22 +1,37 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using System.Security.Permissions;
 using System.Threading;
 using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
 
 namespace TeamViewerPopupBlocker
 {
     public partial class MainForm : Form
     {
-        private static string[] popups = new[] {"Commercial use", "Sponsored session", "Commercial use suspected", "Unable to connect"};
-        
+        private static string[] popups = new[] {"Commercial use", "Sponsored session", "Commercial use suspected", "Unable to connect", "Commercial use detected"};
+
+        static Timer timer = new Timer();
+
         private const uint WM_CLOSE = 0x0010;
 
         public MainForm()
         {
             InitializeComponent();
+
+            IsRepeat = true;
+
+            timer.Interval = 100;
+            timer.Tick += new EventHandler(TimerEventProcessor);
+            timer.Start();
+
             StartBlocking();
         }
+
+        private static void TimerEventProcessor(object myObject, EventArgs myEventArgs)
+        {
+            CloseWindow();
+        }
+
 
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]
         static extern IntPtr FindWindowEx(IntPtr parentHandle, int childAfter, string lclassName, string windowTitle); 
@@ -27,7 +42,7 @@ namespace TeamViewerPopupBlocker
         // Define the FindWindow API function.
 
         [DllImport("user32.dll", EntryPoint = "FindWindow", SetLastError = true)]
-        private static extern IntPtr FindWindowByCaption(IntPtr ZeroOnly, string lpWindowName);
+        private static extern IntPtr FindWindowByCaption(IntPtr zeroOnly, string lpWindowName);
 
         private static bool IsRepeat { get; set; }
 
@@ -103,12 +118,12 @@ namespace TeamViewerPopupBlocker
                     this.miStopBlocking.Enabled = this.miStartBlocking.Enabled;
                     this.miStartBlocking.Enabled = !this.miStartBlocking.Enabled;
                 }
-
-                if (!th.IsAlive)
-                {
-                    IsRepeat = true;
-                    th.Start();
-                }
+                
+                //if (!th.IsAlive)
+                //{
+                //    IsRepeat = true;
+                //    th.Start();
+                //}
 
                 ShowBallonToolTip("has started blocking.");
             }
@@ -138,6 +153,8 @@ namespace TeamViewerPopupBlocker
         private static void StopThread()
         {
             IsRepeat = false;
+            timer.Stop();
+
             //if (th.IsAlive)
             //{
             //    th.Abort();

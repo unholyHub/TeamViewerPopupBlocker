@@ -2,39 +2,23 @@
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
-using Timer = System.Windows.Forms.Timer;
 
 namespace TeamViewerPopupBlocker
 {
     public partial class MainForm : Form
     {
-        private static string[] popups = new[] {"Commercial use", "Sponsored session", "Commercial use suspected", "Unable to connect", "Commercial use detected"};
-
-        static Timer timer = new Timer();
+        private static string[] popups = new[] { "Commercial use", "Sponsored session", "Commercial use suspected", "Unable to connect" };
 
         private const uint WM_CLOSE = 0x0010;
 
         public MainForm()
         {
             InitializeComponent();
-
-            IsRepeat = true;
-
-            timer.Interval = 100;
-            timer.Tick += new EventHandler(TimerEventProcessor);
-            timer.Start();
-
             StartBlocking();
         }
 
-        private static void TimerEventProcessor(object myObject, EventArgs myEventArgs)
-        {
-            CloseWindow();
-        }
-
-
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]
-        static extern IntPtr FindWindowEx(IntPtr parentHandle, int childAfter, string lclassName, string windowTitle); 
+        static extern IntPtr FindWindowEx(IntPtr parentHandle, int childAfter, string lclassName, string windowTitle);
 
         [DllImport("user32.dll")]
         private static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
@@ -42,7 +26,7 @@ namespace TeamViewerPopupBlocker
         // Define the FindWindow API function.
 
         [DllImport("user32.dll", EntryPoint = "FindWindow", SetLastError = true)]
-        private static extern IntPtr FindWindowByCaption(IntPtr zeroOnly, string lpWindowName);
+        private static extern IntPtr FindWindowByCaption(IntPtr ZeroOnly, string lpWindowName);
 
         private static bool IsRepeat { get; set; }
 
@@ -50,7 +34,7 @@ namespace TeamViewerPopupBlocker
 
         private static void CloseWindow()
         {
-            while(IsRepeat)
+            while (IsRepeat)
             {
                 foreach (string popup in popups)
                 {
@@ -111,19 +95,19 @@ namespace TeamViewerPopupBlocker
         {
             try
             {
-                Thread th = new Thread(CloseWindow) {Priority = ThreadPriority.Lowest};
-                
+                Thread th = new Thread(CloseWindow) { Priority = ThreadPriority.Lowest };
+
                 if (this.miStartBlocking.Enabled)
                 {
                     this.miStopBlocking.Enabled = this.miStartBlocking.Enabled;
                     this.miStartBlocking.Enabled = !this.miStartBlocking.Enabled;
                 }
-                
-                //if (!th.IsAlive)
-                //{
-                //    IsRepeat = true;
-                //    th.Start();
-                //}
+
+                if (!th.IsAlive)
+                {
+                    IsRepeat = true;
+                    th.Start();
+                }
 
                 ShowBallonToolTip("has started blocking.");
             }
@@ -147,14 +131,12 @@ namespace TeamViewerPopupBlocker
 
                 ShowBallonToolTip("has stopped blocking.");
             }
-            catch {}
+            catch { }
         }
 
         private static void StopThread()
         {
             IsRepeat = false;
-            timer.Stop();
-
             //if (th.IsAlive)
             //{
             //    th.Abort();

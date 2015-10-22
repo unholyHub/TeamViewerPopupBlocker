@@ -266,4 +266,3 @@
         private System.Windows.Forms.NotifyIcon balloonToolTip;
     }
 }
-

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
@@ -21,8 +20,6 @@ namespace TeamViewerPopupBlocker.Forms
 
         private static bool IsRepeat { get; set; }
 
-        public bool IsFirstStart { get; set; }
-
         private static Timer timer;
 
         public MainForm()
@@ -38,12 +35,12 @@ namespace TeamViewerPopupBlocker.Forms
         {
             AddWindowNameForm = new AddWindowNameForm();
             AboutBox = new AboutBox();
-            IsFirstStart = false;
 
             timer = new Timer();
             timer.Interval = 60 * 1000;
             timer.Tick += new EventHandler(timer1_Tick);
             ShowBallonTextToolTip($"Make {Settings.Instance.ProgramName} better!".ToString(CultureInfo.InvariantCulture));
+
             timer.Start();
         }
 
@@ -133,7 +130,7 @@ namespace TeamViewerPopupBlocker.Forms
             }
             catch (ThreadStateException ex)
             {
-                ShowBallonExceptionToolTip(3000);
+                ShowBallonExceptionToolTip();
                 LogSystem.Instance.AddToLog(ex);
             }
         }
@@ -171,11 +168,6 @@ namespace TeamViewerPopupBlocker.Forms
         {
             StopThread();
             Application.Exit();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void TrayNiMouseDoubleClick(object sender, MouseEventArgs e)
@@ -236,16 +228,6 @@ namespace TeamViewerPopupBlocker.Forms
             }
 
             base.SetVisibleCore(value);
-        }
-
-        private void TrayNiBalloonTipClicked(object sender, EventArgs e)
-        {
-            if (IsFirstStart)
-            {
-                Process.Start(Settings.Instance.PayPalUrl);
-            }
-
-            IsFirstStart = true;
         }
     }
 }

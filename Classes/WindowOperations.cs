@@ -76,9 +76,9 @@ namespace TeamViewerPopupBlocker.Classes
         public static void CheckForWindowName(string windowName)
         {
             //testing new method active window
-            //string ff = GetActiveWindowTitle();
+            //string title = GetActiveWindowTitle();
 
-            //if (ff == windowName)
+            //if (title == windowName)
             //{
             //    CloseWindowByName(windowName);
             //}

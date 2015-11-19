@@ -51,7 +51,6 @@ namespace TeamViewerPopupBlocker.Forms
             this.niTray.Icon = ((System.Drawing.Icon)(resources.GetObject("niTray.Icon")));
             this.niTray.Text = global::TeamViewerPopupBlocker.Properties.Resources.Settings_ProgramName;
             this.niTray.Visible = true;
-            this.niTray.BalloonTipClicked += new System.EventHandler(this.TrayNiBalloonTipClicked);
             this.niTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TrayNiMouseDoubleClick);
             // 
             // contextMenuStrip

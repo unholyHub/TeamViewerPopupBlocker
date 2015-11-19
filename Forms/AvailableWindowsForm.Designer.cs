@@ -105,7 +105,7 @@ namespace TeamViewerPopupBlocker.Forms
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(362, 294);
             this.Name = "AvailableWindowsForm";
-            this.Text = "Available windows";
+            this.Text = "Available Windows";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AvaliableWindowsForm_FormClosing);
             this.Load += new System.EventHandler(this.AvaliableWindowsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvaliableWindows)).EndInit();

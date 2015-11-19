@@ -71,12 +71,342 @@ namespace TeamViewerPopupBlocker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to mailto:jivko89@yahoo.com.
+        /// </summary>
+        internal static string AboutBox_AboutBox_Load_Mailto {
+            get {
+                return ResourceManager.GetString("AboutBox_AboutBox_Load_Mailto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version: {0}.
+        /// </summary>
+        internal static string AboutBox_AboutBox_Version {
+            get {
+                return ResourceManager.GetString("AboutBox_AboutBox_Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy Email.
+        /// </summary>
+        internal static string AboutBox_CopyEmailTsmi_Copy_Email {
+            get {
+                return ResourceManager.GetString("AboutBox_CopyEmailTsmi_Copy_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For any bugs or fixes write me down to the email. Also if you liked my work, I will be happy if you donate..
+        /// </summary>
+        internal static string AboutBox_Description {
+            get {
+                return ResourceManager.GetString("AboutBox_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Donate for TeamViewer Popup Blocker.
+        /// </summary>
+        internal static string AboutBox_DonateBtn_ToolTip {
+            get {
+                return ResourceManager.GetString("AboutBox_DonateBtn_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copyright @ Zhivko Laflurov.
+        /// </summary>
+        internal static string AboutBox_InitializeComponent_Copyright___Zhivko_Laflurov {
+            get {
+                return ResourceManager.GetString("AboutBox_InitializeComponent_Copyright___Zhivko_Laflurov", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        internal static string AboutBox_InitializeComponent_Description {
+            get {
+                return ResourceManager.GetString("AboutBox_InitializeComponent_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copyright @ Zhivko Laflurov.
+        /// </summary>
+        internal static string AboutBox_LblCopyright___Text {
+            get {
+                return ResourceManager.GetString("AboutBox_LblCopyright___Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to jivko89@yahoo.com.
+        /// </summary>
+        internal static string AboutBox_LblEmail_Text {
+            get {
+                return ResourceManager.GetString("AboutBox_LblEmail_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string AboutBox_OkBtn_Text {
+            get {
+                return ResourceManager.GetString("AboutBox_OkBtn_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open my blog.
+        /// </summary>
+        internal static string AboutBox_PicBox_ToolTip {
+            get {
+                return ResourceManager.GetString("AboutBox_PicBox_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        internal static string AboutBox_TxtDesc_Text {
+            get {
+                return ResourceManager.GetString("AboutBox_TxtDesc_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_window_name {
+            get {
+                object obj = ResourceManager.GetObject("add_window_name", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Write exactly the name of the other..
+        /// </summary>
+        internal static string AddWindowNam_InfoBtnClick {
+            get {
+                return ResourceManager.GetString("AddWindowNam_InfoBtnClick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error!.
+        /// </summary>
+        internal static string AddWindowNameForm_btnDefault_Click_Error_ {
+            get {
+                return ResourceManager.GetString("AddWindowNameForm_btnDefault_Click_Error_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string AddWindowNameForm_btnDefault_Click_OK {
+            get {
+                return ResourceManager.GetString("AddWindowNameForm_btnDefault_Click_OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        internal static string AddWindowNameForm_BtnInfo_Help {
+            get {
+                return ResourceManager.GetString("AddWindowNameForm_BtnInfo_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TeamViewer Window Name.
+        /// </summary>
+        internal static string AddWindowNameForm_ColumnNames_TeamViewer_Window_Name {
+            get {
+                return ResourceManager.GetString("AddWindowNameForm_ColumnNames_TeamViewer_Window_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add TeamViewer Window Name.
+        /// </summary>
+        internal static string AddWindowNameForm_InitializeComponent_Add_TeamViewer_Window_Name {
+            get {
+                return ResourceManager.GetString("AddWindowNameForm_InitializeComponent_Add_TeamViewer_Window_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy.
+        /// </summary>
+        internal static string AddWindowNameForm_InitializeComponent_Copy {
+            get {
+                return ResourceManager.GetString("AddWindowNameForm_InitializeComponent_Copy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        internal static string AddWindowNameForm_InitializeComponent_Default {
+            get {
+                return ResourceManager.GetString("AddWindowNameForm_InitializeComponent_Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string AddWindowNameForm_InitializeComponent_Delete {
+            get {
+                return ResourceManager.GetString("AddWindowNameForm_InitializeComponent_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string AddWindowNameForm_InitializeComponent_Save {
+            get {
+                return ResourceManager.GetString("AddWindowNameForm_InitializeComponent_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status:.
+        /// </summary>
+        internal static string AddWindowNameForm_InitializeComponent_Status {
+            get {
+                return ResourceManager.GetString("AddWindowNameForm_InitializeComponent_Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Opened Windows.
+        /// </summary>
+        internal static string AddWindowNameForm_InitializeComponent_View_Opened_Windows {
+            get {
+                return ResourceManager.GetString("AddWindowNameForm_InitializeComponent_View_Opened_Windows", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please, close this other to start the blocking..
+        /// </summary>
+        internal static string AddWindowNameForm_SaveBtnClick {
+            get {
+                return ResourceManager.GetString("AddWindowNameForm_SaveBtnClick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK!.
+        /// </summary>
+        internal static string AddWindowNameForm_SaveBtnClick_OK_ {
+            get {
+                return ResourceManager.GetString("AddWindowNameForm_SaveBtnClick_OK_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon app_icon {
+        internal static System.Drawing.Icon appIcon {
             get {
-                object obj = ResourceManager.GetObject("app_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("appIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Window Name.
+        /// </summary>
+        internal static string AvailableWindowsForm_InitializeComponent_Add_Window_Name {
+            get {
+                return ResourceManager.GetString("AvailableWindowsForm_InitializeComponent_Add_Window_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy Window Name.
+        /// </summary>
+        internal static string AvailableWindowsForm_InitializeComponent_Copy_Window_Name {
+            get {
+                return ResourceManager.GetString("AvailableWindowsForm_InitializeComponent_Copy_Window_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refresh List.
+        /// </summary>
+        internal static string AvailableWindowsForm_InitializeComponent_Refresh_List {
+            get {
+                return ResourceManager.GetString("AvailableWindowsForm_InitializeComponent_Refresh_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Available others.
+        /// </summary>
+        internal static string AvaliableWindowsForm_Text {
+            get {
+                return ResourceManager.GetString("AvaliableWindowsForm_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap copy {
+            get {
+                object obj = ResourceManager.GetObject("copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap copy_email {
+            get {
+                object obj = ResourceManager.GetObject("copy_email", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete {
+            get {
+                object obj = ResourceManager.GetObject("delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Donate_Button_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Donate_Button_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Donate_Button_Normal {
+            get {
+                object obj = ResourceManager.GetObject("Donate_Button_Normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -87,6 +417,98 @@ namespace TeamViewerPopupBlocker.Properties {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap license {
+            get {
+                object obj = ResourceManager.GetObject("license", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        internal static string MainForm_InitializeComponent_About {
+            get {
+                return ResourceManager.GetString("MainForm_InitializeComponent_About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Window Name.
+        /// </summary>
+        internal static string MainForm_InitializeComponent_Add_Window_Name {
+            get {
+                return ResourceManager.GetString("MainForm_InitializeComponent_Add_Window_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        internal static string MainForm_InitializeComponent_Exit {
+            get {
+                return ResourceManager.GetString("MainForm_InitializeComponent_Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ballonToolTip.
+        /// </summary>
+        internal static string MainForm_InitializeComponent_notifyIcon1 {
+            get {
+                return ResourceManager.GetString("MainForm_InitializeComponent_notifyIcon1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start Blocking.
+        /// </summary>
+        internal static string MainForm_InitializeComponent_Start_Blocking {
+            get {
+                return ResourceManager.GetString("MainForm_InitializeComponent_Start_Blocking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop Blocking.
+        /// </summary>
+        internal static string MainForm_InitializeComponent_Stop_Blocking {
+            get {
+                return ResourceManager.GetString("MainForm_InitializeComponent_Stop_Blocking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Another instance is already running..
+        /// </summary>
+        internal static string Program_MsgBox {
+            get {
+                return ResourceManager.GetString("Program_MsgBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Question_Mark {
+            get {
+                object obj = ResourceManager.GetObject("Question_Mark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TeamViewer Popup Blocker.
+        /// </summary>
+        internal static string Settings_ProgramName {
+            get {
+                return ResourceManager.GetString("Settings_ProgramName", resourceCulture);
             }
         }
         
@@ -107,6 +529,42 @@ namespace TeamViewerPopupBlocker.Properties {
             get {
                 object obj = ResourceManager.GetObject("stop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Commercial use.
+        /// </summary>
+        internal static string TeamViewer_WindowName_Commercial_use {
+            get {
+                return ResourceManager.GetString("TeamViewer_WindowName_Commercial_use", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Commercial use suspected.
+        /// </summary>
+        internal static string TeamViewer_WindowName_Commercial_use_suspected {
+            get {
+                return ResourceManager.GetString("TeamViewer_WindowName_Commercial_use_suspected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sponsored session.
+        /// </summary>
+        internal static string TeamViewer_WindowName_Sponssored_Session {
+            get {
+                return ResourceManager.GetString("TeamViewer_WindowName_Sponssored_Session", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to connect.
+        /// </summary>
+        internal static string TeamViewer_WindowName_Unable_to_connect {
+            get {
+                return ResourceManager.GetString("TeamViewer_WindowName_Unable_to_connect", resourceCulture);
             }
         }
     }

@@ -121,16 +121,168 @@
   <data name="about" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MenuItems\about.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="app_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon.asordered.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add_window_name" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MenuItems\add_window_name.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Donate_Button_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Buttons\Donate_Button_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Donate_Button_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Buttons\Donate_Button_Normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MenuItems\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="appIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\icon.asordered.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="start" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MenuItems\start.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MenuItems\stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Question_Mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Buttons\Question_Mark.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copy_email" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MenuItems\copy_email.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="license" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MenuItems\license.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Program_MsgBox" xml:space="preserve">
+    <value>Another instance is already running.</value>
+    <comment>for start of app</comment>
+  </data>
+  <data name="AboutBox_Description" xml:space="preserve">
+    <value>For any bugs or fixes write me down to the email. Also if you liked my work, I will be happy if you donate.</value>
+  </data>
+  <data name="AboutBox_DonateBtn_ToolTip" xml:space="preserve">
+    <value>Donate for TeamViewer Popup Blocker</value>
+  </data>
+  <data name="AboutBox_PicBox_ToolTip" xml:space="preserve">
+    <value>Open my blog</value>
+  </data>
+  <data name="AddWindowNam_InfoBtnClick" xml:space="preserve">
+    <value>Write exactly the name of the other.</value>
+  </data>
+  <data name="AddWindowNameForm_SaveBtnClick" xml:space="preserve">
+    <value>Please, close this other to start the blocking.</value>
+  </data>
+  <data name="copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MenuItems\copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MenuItems\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TeamViewer_WindowName_Commercial_use" xml:space="preserve">
+    <value>Commercial use</value>
+  </data>
+  <data name="TeamViewer_WindowName_Sponssored_Session" xml:space="preserve">
+    <value>Sponsored session</value>
+  </data>
+  <data name="TeamViewer_WindowName_Commercial_use_suspected" xml:space="preserve">
+    <value>Commercial use suspected</value>
+  </data>
+  <data name="TeamViewer_WindowName_Unable_to_connect" xml:space="preserve">
+    <value>Unable to connect</value>
+  </data>
+  <data name="AboutBox_AboutBox_Version" xml:space="preserve">
+    <value>Version: {0}</value>
+    <comment>its replaced with string format</comment>
+  </data>
+  <data name="AboutBox_AboutBox_Load_Mailto" xml:space="preserve">
+    <value>mailto:jivko89@yahoo.com</value>
+  </data>
+  <data name="AboutBox_OkBtn_Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="AboutBox_LblCopyright___Text" xml:space="preserve">
+    <value>Copyright @ Zhivko Laflurov</value>
+  </data>
+  <data name="AboutBox_TxtDesc_Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="AboutBox_LblEmail_Text" xml:space="preserve">
+    <value>jivko89@yahoo.com</value>
+  </data>
+  <data name="Settings_ProgramName" xml:space="preserve">
+    <value>TeamViewer Popup Blocker</value>
+  </data>
+  <data name="AboutBox_CopyEmailTsmi_Copy_Email" xml:space="preserve">
+    <value>Copy Email</value>
+  </data>
+  <data name="AddWindowNameForm_btnDefault_Click_Error_" xml:space="preserve">
+    <value>Error!</value>
+  </data>
+  <data name="AddWindowNameForm_btnDefault_Click_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="AddWindowNameForm_BtnInfo_Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="AvaliableWindowsForm_Text" xml:space="preserve">
+    <value>Available others</value>
+  </data>
+  <data name="AddWindowNameForm_InitializeComponent_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="AddWindowNameForm_InitializeComponent_View_Opened_Windows" xml:space="preserve">
+    <value>View Opened Windows</value>
+  </data>
+  <data name="AddWindowNameForm_InitializeComponent_Add_TeamViewer_Window_Name" xml:space="preserve">
+    <value>Add TeamViewer Window Name</value>
+  </data>
+  <data name="AddWindowNameForm_InitializeComponent_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="AddWindowNameForm_InitializeComponent_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="AddWindowNameForm_InitializeComponent_Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="AddWindowNameForm_InitializeComponent_Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="MainForm_InitializeComponent_Start_Blocking" xml:space="preserve">
+    <value>Start Blocking</value>
+  </data>
+  <data name="MainForm_InitializeComponent_Stop_Blocking" xml:space="preserve">
+    <value>Stop Blocking</value>
+  </data>
+  <data name="MainForm_InitializeComponent_Add_Window_Name" xml:space="preserve">
+    <value>Add Window Name</value>
+  </data>
+  <data name="MainForm_InitializeComponent_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="MainForm_InitializeComponent_Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="AboutBox_InitializeComponent_Copyright___Zhivko_Laflurov" xml:space="preserve">
+    <value>Copyright @ Zhivko Laflurov</value>
+  </data>
+  <data name="AboutBox_InitializeComponent_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="AddWindowNameForm_SaveBtnClick_OK_" xml:space="preserve">
+    <value>OK!</value>
+  </data>
+  <data name="AddWindowNameForm_ColumnNames_TeamViewer_Window_Name" xml:space="preserve">
+    <value>TeamViewer Window Name</value>
+  </data>
+  <data name="MainForm_InitializeComponent_notifyIcon1" xml:space="preserve">
+    <value>ballonToolTip</value>
+  </data>
+  <data name="AvailableWindowsForm_InitializeComponent_Copy_Window_Name" xml:space="preserve">
+    <value>Copy Window Name</value>
+  </data>
+  <data name="AvailableWindowsForm_InitializeComponent_Add_Window_Name" xml:space="preserve">
+    <value>Add Window Name</value>
+  </data>
+  <data name="AvailableWindowsForm_InitializeComponent_Refresh_List" xml:space="preserve">
+    <value>Refresh List</value>
   </data>
 </root>

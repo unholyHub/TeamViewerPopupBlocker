@@ -18,6 +18,8 @@
     <UpgradeBackupLocation />
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -29,7 +31,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -43,6 +45,7 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -54,16 +57,19 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.asordered.ico</ApplicationIcon>
+    <ApplicationIcon>Icons\app_icon_default.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>tvpb.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TeamViewerPopupBlocker.Startup</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -73,18 +79,22 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\NativeMethods.cs" />
+    <Compile Include="Classes\WebClientExtent.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\StringFunctions.cs" />
     <Compile Include="Classes\DataFunctions.cs" />
     <Compile Include="Classes\LogSystem.cs" />
+    <Compile Include="Classes\UpdateNotifier.cs" />
+    <Compile Include="Classes\WindowOperations.cs" />
     <Compile Include="Forms\AvailableWindowsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AvailableWindowsForm.Designer.cs">
       <DependentUpon>AvailableWindowsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\FileOperations.cs" />
     <Compile Include="Classes\Settings.cs" />
-    <Compile Include="Classes\WindowOperations.cs" />
     <Compile Include="Classes\Window.cs" />
     <Compile Include="Forms\AboutBox.cs">
       <SubType>Form</SubType>
@@ -104,8 +114,7 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\GlobalSuppressions.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AvailableWindowsForm.resx">
       <DependentUpon>AvailableWindowsForm.cs</DependentUpon>
@@ -131,20 +140,15 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
+    <None Include="Icons\Icon-default.xcf" />
+    <None Include="README.md" />
+    <None Include="TeamViewerPopupBlocker.csproj.DotSettings" />
+    <None Include="TeamViewerPopupBlocker.suo" />
     <None Include="tvpb.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -165,8 +169,25 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="icon.asordered.ico" />
+    <Content Include="Button Images\donate_button_hover.png" />
+    <Content Include="Button Images\donate_button_normal.png" />
+    <Content Include="Button Images\question_mark.jpg" />
+    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+    <None Include="Icons\app_icon_default.ico" />
+    <None Include="Icons\app_icon_turned-off.ico" />
+    <Content Include="Menu Items\about.png" />
+    <Content Include="Menu Items\add_window_name.png" />
+    <None Include="Menu Items\check-for-updates.png" />
+    <Content Include="Menu Items\copy.png" />
+    <Content Include="Menu Items\copy_email.png" />
+    <Content Include="Menu Items\delete.png" />
+    <Content Include="Menu Items\exit.png" />
+    <Content Include="Menu Items\start.png" />
+    <Content Include="Menu Items\stop.png" />
+    <Content Include="TeamViewerPopupBlocker.csproj.DotSettings.user" />
+    <Content Include="TeamViewerPopupBlocker.sln.DotSettings.user" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

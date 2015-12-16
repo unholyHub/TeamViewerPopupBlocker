@@ -1,18 +1,37 @@
-using System;
-using System.IO;
-using System.Text;
-
+//-----------------------------------------------------------------------
+// <copyright file="DataFunctions.cs" company="Zhivko">
+//     Copyright (c) Zhivko. All rights reserved.
+// </copyright>
+// <author>Zhivko Kabaivanov</author>
+//-----------------------------------------------------------------------
 namespace TeamViewerPopupBlocker.Classes
 {
+    using System;
+    using System.Collections.ObjectModel;
+    using System.IO;
+    using System.Text;
+
+    /// <summary>
+    /// Class for data operations.
+    /// </summary>
     public static class DataFunctions
     {
+        /// <summary>
+        /// Gets the loaded string from file.
+        /// </summary>
         public static string LoadedString { get; private set; }
 
-        /// <exception cref="UnauthorizedAccessException">Access is denied. </exception>
-        /// <exception cref="ObjectDisposedException"><see cref="P:System.IO.StreamWriter.AutoFlush" /> is true or the <see cref="T:System.IO.StreamWriter" /> buffer is full, and current writer is closed. </exception>
-        /// <exception cref="NotSupportedException"><see cref="P:System.IO.StreamWriter.AutoFlush" /> is true or the <see cref="T:System.IO.StreamWriter" /> buffer is full, and the contents of the buffer cannot be written to the underlying fixed size stream because the <see cref="T:System.IO.StreamWriter" /> is at the end the stream. </exception>
-        /// <exception cref="System.Security.SecurityException">The caller does not have the required permission. </exception>
-        public static void SaveStringToFile(string path, string data, bool append = true)
+        /// <summary>
+        /// Saves a string to a specific file.
+        /// </summary>
+        /// <param name="path">The complete file path to be read.</param>
+        /// <param name="textData">The string data that will be save to the file.</param>
+        /// <param name="append">
+        ///     Determines whether data is to be appended to the file. If the file exists and
+        ///     append is false, the file is overwritten. If the file exists and append is true,
+        ///     the data is appended to the file. Otherwise, a new file is created.
+        /// </param>
+        public static void SaveTextDataToFile(string path, string textData, bool append)
         {
             string pathWithEnvironmentVariables = Environment.ExpandEnvironmentVariables(path);
 
@@ -20,22 +39,24 @@ namespace TeamViewerPopupBlocker.Classes
             {
                 using (StreamWriter sr = new StreamWriter(pathWithEnvironmentVariables, append, Encoding.Unicode))
                 {
-                    sr.Write(data);
+                    sr.Write(textData);
                 }
             }
             catch (UnauthorizedAccessException unauthorizedAccessException)
             {
-                LogSystem.Instance.AddToLog(unauthorizedAccessException);
+                LogSystem.Instance.AddToLog(unauthorizedAccessException, false);
             }
             catch (IOException ioException)
             {
-                LogSystem.Instance.AddToLog(ioException);
+                LogSystem.Instance.AddToLog(ioException, false);
             }
         }
 
-        /// <exception cref="OutOfMemoryException">There is insufficient memory to allocate a buffer for the returned string. </exception>
-        /// <exception cref="ArgumentException"><paramref name="path" /> is an empty string (""). </exception>
-        /// <exception cref="ArgumentNullException"><paramref name="path" /> is null. </exception>
+        /// <summary>
+        /// Reads the string content from a specific file.
+        /// </summary>
+        /// <param name="path">The complete file path to be read.</param>
+        /// <returns>Returns one for success and zero for <see cref="IOException"/>.</returns>
         public static int LoadStringFromFile(string path)
         {
             try
@@ -46,10 +67,83 @@ namespace TeamViewerPopupBlocker.Classes
                     return 1;
                 }
             }
-            catch (IOException ioException) 
+            catch (IOException ioException)
             {
-                LogSystem.Instance.AddToLog(ioException);
+                LogSystem.Instance.AddToLog(ioException, false);
                 return 0;
+            }
+        }
+
+        /// <summary>
+        /// Writes the <see cref="Collection{T}"/> to a specific file.
+        /// </summary>
+        /// <param name="filePath">The complete file path to write to.</param>
+        /// <param name="collection">The collection that will be added to file.</param>
+        public static void WriteCollectionToFile(string filePath, Collection<string> collection)
+        {
+            using (StreamWriter writer = new StreamWriter(filePath, false, Encoding.UTF8))
+            {
+                if (collection == null)
+                {
+                    return;
+                }
+
+                foreach (string s in collection)
+                {
+                    writer.WriteLine(s);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Reads a text lines from a file and stores them in a <see cref="Collection{T}"/>.
+        /// </summary>
+        /// <param name="filePath">The complete file path to write to.</param>
+        /// <returns>Returns the read <see cref="Collection{T}"/>.</returns>
+        public static Collection<string> ReadTextFromFile(string filePath)
+        {
+            Collection<string> collection = new Collection<string>();
+
+            if (!File.Exists(filePath))
+            {
+                return collection;
+            }
+
+            using (StreamReader reader = new StreamReader(filePath, Encoding.UTF8))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    if (string.IsNullOrEmpty(line))
+                    {
+                        continue;
+                    }
+
+                    collection.Add(line);
+                }
+            }
+
+            return collection;
+        }
+
+        /// <summary>
+        /// Adds a <see cref="Collection{T}"/> to a specific file.
+        /// </summary>
+        /// <param name="filePath">The complete file path to write to.</param>
+        /// <param name="collection">The collection that will be added to file.</param>
+        public static void AddCollectionToFile(string filePath, Collection<string> collection)
+        {
+            using (StreamWriter writer = new StreamWriter(filePath, true, Encoding.UTF8))
+            {
+                if (collection == null)
+                {
+                    return;
+                }
+
+                foreach (string s in collection)
+                {
+                    writer.WriteLine(s);
+                }
             }
         }
     }

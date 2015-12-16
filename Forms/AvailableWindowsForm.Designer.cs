@@ -53,9 +53,9 @@ namespace TeamViewerPopupBlocker.Forms
             this.dgvAvaliableWindows.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAvaliableWindows.Size = new System.Drawing.Size(321, 188);
             this.dgvAvaliableWindows.TabIndex = 0;
-            this.dgvAvaliableWindows.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAvaliableWindows_CellContentDoubleClick);
-            this.dgvAvaliableWindows.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgv_RowPrePaint);
-            this.dgvAvaliableWindows.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvAvaliableWindows_MouseClick);
+            this.dgvAvaliableWindows.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AvaliableWindowsDgvCellContentDoubleClick);
+            this.dgvAvaliableWindows.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.AvailableWindowsDgvRowPrePaint);
+            this.dgvAvaliableWindows.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AvaliableWindowsDgvMouseClick);
             // 
             // btnRefreshList
             // 
@@ -65,7 +65,7 @@ namespace TeamViewerPopupBlocker.Forms
             this.btnRefreshList.TabIndex = 1;
             this.btnRefreshList.Text = global::TeamViewerPopupBlocker.Properties.Resources.AvailableWindowsForm_InitializeComponent_Refresh_List;
             this.btnRefreshList.UseVisualStyleBackColor = true;
-            this.btnRefreshList.Click += new System.EventHandler(this.btnRefreshList_Click);
+            this.btnRefreshList.Click += new System.EventHandler(this.RefreshListBtnClick);
             // 
             // ctxmsMenu
             // 
@@ -81,7 +81,7 @@ namespace TeamViewerPopupBlocker.Forms
             this.tsmiAddWindowName.Name = "tsmiAddWindowName";
             this.tsmiAddWindowName.Size = new System.Drawing.Size(184, 22);
             this.tsmiAddWindowName.Text = global::TeamViewerPopupBlocker.Properties.Resources.AvailableWindowsForm_InitializeComponent_Add_Window_Name;
-            this.tsmiAddWindowName.Click += new System.EventHandler(this.tsmiAddWindowName_Click);
+            this.tsmiAddWindowName.Click += new System.EventHandler(this.AddWindowNameTsmiClick);
             // 
             // tsmiCopyWindowName
             // 
@@ -89,13 +89,13 @@ namespace TeamViewerPopupBlocker.Forms
             this.tsmiCopyWindowName.Name = "tsmiCopyWindowName";
             this.tsmiCopyWindowName.Size = new System.Drawing.Size(184, 22);
             this.tsmiCopyWindowName.Text = global::TeamViewerPopupBlocker.Properties.Resources.AvailableWindowsForm_InitializeComponent_Copy_Window_Name;
-            this.tsmiCopyWindowName.Click += new System.EventHandler(this.tsmiCopyWindowName_Click);
+            this.tsmiCopyWindowName.Click += new System.EventHandler(this.CopyWindowNameTsmiClick);
             // 
             // AvailableWindowsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 255);
+            this.ClientSize = new System.Drawing.Size(346, 256);
             this.Controls.Add(this.btnRefreshList);
             this.Controls.Add(this.dgvAvaliableWindows);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -105,9 +105,9 @@ namespace TeamViewerPopupBlocker.Forms
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(362, 294);
             this.Name = "AvailableWindowsForm";
-            this.Text = "Available Windows";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AvaliableWindowsForm_FormClosing);
-            this.Load += new System.EventHandler(this.AvaliableWindowsForm_Load);
+            this.Text = global::TeamViewerPopupBlocker.Properties.Resources.AvailableWindowsForm_InitializeComponent_Available_Windows;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AvaliableWindowsFormClosing);
+            this.Load += new System.EventHandler(this.AvaliableWindowsFormLoad);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvaliableWindows)).EndInit();
             this.ctxmsMenu.ResumeLayout(false);
             this.ResumeLayout(false);

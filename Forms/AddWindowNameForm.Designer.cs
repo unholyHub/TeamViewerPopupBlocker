@@ -1,6 +1,4 @@
-﻿using TeamViewerPopupBlocker.Properties;
-
-namespace TeamViewerPopupBlocker.Forms
+﻿namespace TeamViewerPopupBlocker.Forms
 {
     partial class AddWindowNameForm
     {
@@ -35,9 +33,8 @@ namespace TeamViewerPopupBlocker.Forms
             this.dgvWindowNames = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDefault = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.lblResult = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnInfo = new System.Windows.Forms.Button();
             this.cmsRowMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCopy = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,17 +55,18 @@ namespace TeamViewerPopupBlocker.Forms
             this.dgvWindowNames.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvWindowNames.Size = new System.Drawing.Size(417, 186);
             this.dgvWindowNames.TabIndex = 0;
-            this.dgvWindowNames.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvWindowNames_KeyDown);
-            this.dgvWindowNames.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvWindowNames_MouseClick);
+            this.dgvWindowNames.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.WindowNamesDdvCellValueChanged);
+            this.dgvWindowNames.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvWindowNames_RowsAdded);
+            this.dgvWindowNames.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DgvWindowNamesMouseClick);
             // 
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSave.Location = new System.Drawing.Point(260, 205);
+            this.btnSave.Location = new System.Drawing.Point(293, 205);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(87, 39);
+            this.btnSave.Size = new System.Drawing.Size(54, 39);
             this.btnSave.TabIndex = 1;
-            this.btnSave.Text = Resources.AddWindowNameForm_InitializeComponent_Save;
+            this.btnSave.Text = global::TeamViewerPopupBlocker.Properties.Resources.AddWindowNameForm_InitializeComponent_Save;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.SaveBtnClick);
             // 
@@ -77,21 +75,21 @@ namespace TeamViewerPopupBlocker.Forms
             this.btnDefault.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnDefault.Location = new System.Drawing.Point(169, 205);
             this.btnDefault.Name = "btnDefault";
-            this.btnDefault.Size = new System.Drawing.Size(85, 38);
+            this.btnDefault.Size = new System.Drawing.Size(118, 38);
             this.btnDefault.TabIndex = 2;
-            this.btnDefault.Text = Resources.AddWindowNameForm_InitializeComponent_Default;
+            this.btnDefault.Text = global::TeamViewerPopupBlocker.Properties.Resources.AddWindowNameForm_InitializeComponent_Default;
             this.btnDefault.UseVisualStyleBackColor = true;
             this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
             // 
-            // label1
+            // lblStatus
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(365, 218);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = Resources.AddWindowNameForm_InitializeComponent_Status;
+            this.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(365, 218);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(40, 13);
+            this.lblStatus.TabIndex = 3;
+            this.lblStatus.Text = "Status:";
             // 
             // lblResult
             // 
@@ -106,7 +104,7 @@ namespace TeamViewerPopupBlocker.Forms
             // 
             this.btnInfo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnInfo.BackColor = System.Drawing.Color.Transparent;
-            this.btnInfo.BackgroundImage = global::TeamViewerPopupBlocker.Properties.Resources.Question_Mark;
+            this.btnInfo.BackgroundImage = global::TeamViewerPopupBlocker.Properties.Resources.question_mark;
             this.btnInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInfo.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
@@ -118,7 +116,6 @@ namespace TeamViewerPopupBlocker.Forms
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Size = new System.Drawing.Size(39, 38);
             this.btnInfo.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.btnInfo, Resources.AddWindowNameForm_BtnInfo_Help);
             this.btnInfo.UseVisualStyleBackColor = false;
             this.btnInfo.Click += new System.EventHandler(this.InfoBtnClick);
             // 
@@ -135,16 +132,16 @@ namespace TeamViewerPopupBlocker.Forms
             this.tsmiCopy.Image = global::TeamViewerPopupBlocker.Properties.Resources.copy;
             this.tsmiCopy.Name = "tsmiCopy";
             this.tsmiCopy.Size = new System.Drawing.Size(107, 22);
-            this.tsmiCopy.Text = Resources.AddWindowNameForm_InitializeComponent_Copy;
-            this.tsmiCopy.Click += new System.EventHandler(this.tsmiCopy_Click);
+            this.tsmiCopy.Text = global::TeamViewerPopupBlocker.Properties.Resources.AddWindowNameForm_InitializeComponent_Copy;
+            this.tsmiCopy.Click += new System.EventHandler(this.TsmiCopyClick);
             // 
             // tsmiDelete
             // 
             this.tsmiDelete.Image = global::TeamViewerPopupBlocker.Properties.Resources.delete;
             this.tsmiDelete.Name = "tsmiDelete";
             this.tsmiDelete.Size = new System.Drawing.Size(107, 22);
-            this.tsmiDelete.Text = Resources.AddWindowNameForm_InitializeComponent_Delete;
-            this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
+            this.tsmiDelete.Text = global::TeamViewerPopupBlocker.Properties.Resources.AddWindowNameForm_InitializeComponent_Delete;
+            this.tsmiDelete.Click += new System.EventHandler(this.TsmiDeleteClick);
             // 
             // btnViewWindows
             // 
@@ -152,20 +149,20 @@ namespace TeamViewerPopupBlocker.Forms
             this.btnViewWindows.Name = "btnViewWindows";
             this.btnViewWindows.Size = new System.Drawing.Size(105, 39);
             this.btnViewWindows.TabIndex = 6;
-            this.btnViewWindows.Text = Resources.AddWindowNameForm_InitializeComponent_View_Opened_Windows;
+            this.btnViewWindows.Text = global::TeamViewerPopupBlocker.Properties.Resources.AddWindowNameForm_InitializeComponent_View_Opened_Windows;
             this.btnViewWindows.UseVisualStyleBackColor = true;
-            this.btnViewWindows.Click += new System.EventHandler(this.btnViewWindows_Click);
+            this.btnViewWindows.Click += new System.EventHandler(this.ViewWindowsBtnClick);
             // 
             // AddWindowNameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(442, 255);
+            this.ClientSize = new System.Drawing.Size(442, 256);
             this.Controls.Add(this.btnViewWindows);
             this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.lblResult);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnDefault);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dgvWindowNames);
@@ -177,9 +174,9 @@ namespace TeamViewerPopupBlocker.Forms
             this.MinimumSize = new System.Drawing.Size(458, 294);
             this.Name = "AddWindowNameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = Resources.AddWindowNameForm_InitializeComponent_Add_TeamViewer_Window_Name;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddWindowNameForm_FormClosing);
-            this.Load += new System.EventHandler(this.AddWindowNameForm_Load);
+            this.Text = "Add TeamViewer Window Name";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddWindowNameFormFormClosing);
+            this.Load += new System.EventHandler(this.AddWindowNameFormLoad);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWindowNames)).EndInit();
             this.cmsRowMenu.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -192,9 +189,8 @@ namespace TeamViewerPopupBlocker.Forms
         private System.Windows.Forms.DataGridView dgvWindowNames;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDefault;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblResult;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.ContextMenuStrip cmsRowMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopy;

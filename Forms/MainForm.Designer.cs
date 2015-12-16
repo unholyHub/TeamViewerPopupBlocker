@@ -1,6 +1,4 @@
-﻿using TeamViewerPopupBlocker.Properties;
-
-namespace TeamViewerPopupBlocker.Forms
+﻿namespace TeamViewerPopupBlocker.Forms
 {
     partial class MainForm
     {
@@ -19,6 +17,7 @@ namespace TeamViewerPopupBlocker.Forms
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -39,6 +38,8 @@ namespace TeamViewerPopupBlocker.Forms
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.miAddWindowName = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.smiUpdateCheck = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.miExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,9 +50,9 @@ namespace TeamViewerPopupBlocker.Forms
             // 
             this.niTray.ContextMenuStrip = this.contextMenuStrip;
             this.niTray.Icon = ((System.Drawing.Icon)(resources.GetObject("niTray.Icon")));
-            this.niTray.Text = global::TeamViewerPopupBlocker.Properties.Resources.Settings_ProgramName;
+            this.niTray.Text = global::TeamViewerPopupBlocker.Properties.Resources.Program_Name;
             this.niTray.Visible = true;
-            this.niTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TrayNiMouseDoubleClick);
+            this.niTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TrayNotifyIconMouseDoubleClick);
             // 
             // contextMenuStrip
             // 
@@ -61,11 +62,13 @@ namespace TeamViewerPopupBlocker.Forms
             this.toolStripSeparator1,
             this.miAddWindowName,
             this.toolStripSeparator2,
+            this.smiUpdateCheck,
+            this.toolStripSeparator4,
             this.miAbout,
             this.toolStripSeparator3,
             this.miExit});
             this.contextMenuStrip.Name = "contextMenuStrip1";
-            this.contextMenuStrip.Size = new System.Drawing.Size(179, 132);
+            this.contextMenuStrip.Size = new System.Drawing.Size(179, 160);
             // 
             // miStartBlocking
             // 
@@ -81,7 +84,7 @@ namespace TeamViewerPopupBlocker.Forms
             this.miStopBlocking.Name = "miStopBlocking";
             this.miStopBlocking.Size = new System.Drawing.Size(178, 22);
             this.miStopBlocking.Text = global::TeamViewerPopupBlocker.Properties.Resources.MainForm_InitializeComponent_Stop_Blocking;
-            this.miStopBlocking.Click += new System.EventHandler(this.miStopBlocking_Click);
+            this.miStopBlocking.Click += new System.EventHandler(this.StopBlockingMenuItemClick);
             // 
             // toolStripSeparator1
             // 
@@ -94,12 +97,25 @@ namespace TeamViewerPopupBlocker.Forms
             this.miAddWindowName.Name = "miAddWindowName";
             this.miAddWindowName.Size = new System.Drawing.Size(178, 22);
             this.miAddWindowName.Text = global::TeamViewerPopupBlocker.Properties.Resources.MainForm_InitializeComponent_Add_Window_Name;
-            this.miAddWindowName.Click += new System.EventHandler(this.miAddWindowName_Click);
+            this.miAddWindowName.Click += new System.EventHandler(this.AddWindowNameMenuItemClick);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(175, 6);
+            // 
+            // smiUpdateCheck
+            // 
+            this.smiUpdateCheck.Image = global::TeamViewerPopupBlocker.Properties.Resources.check_for_updates;
+            this.smiUpdateCheck.Name = "smiUpdateCheck";
+            this.smiUpdateCheck.Size = new System.Drawing.Size(178, 22);
+            this.smiUpdateCheck.Text = global::TeamViewerPopupBlocker.Properties.Resources.MainForm_InitializeComponent_Check_for_updates;
+            this.smiUpdateCheck.Click += new System.EventHandler(this.UpdateCheckMenuItemClick);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(175, 6);
             // 
             // miAbout
             // 
@@ -120,17 +136,20 @@ namespace TeamViewerPopupBlocker.Forms
             this.miExit.Name = "miExit";
             this.miExit.Size = new System.Drawing.Size(178, 22);
             this.miExit.Text = global::TeamViewerPopupBlocker.Properties.Resources.MainForm_InitializeComponent_Exit;
-            this.miExit.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.miExit.Click += new System.EventHandler(this.ExitToolStripMenuItemClick);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(124, 0);
+            this.ClientSize = new System.Drawing.Size(414, 338);
+            this.ControlBox = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Text = "TeamViewer Popup Blocker";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -147,5 +166,7 @@ namespace TeamViewerPopupBlocker.Forms
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem miAddWindowName;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem smiUpdateCheck;
     }
 }

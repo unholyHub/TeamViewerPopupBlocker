@@ -116,11 +116,11 @@ namespace TeamViewerPopupBlocker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copyright @ Zhivko Laflurov.
+        ///   Looks up a localized string similar to Unrecognized mouse button is clicked..
         /// </summary>
-        internal static string AboutBox_InitializeComponent_Copyright___Zhivko_Laflurov {
+        internal static string AboutBox_EmailLinkLblClick_Unrecognized_mouse_button_is_clicked_ {
             get {
-                return ResourceManager.GetString("AboutBox_InitializeComponent_Copyright___Zhivko_Laflurov", resourceCulture);
+                return ResourceManager.GetString("AboutBox_EmailLinkLblClick_Unrecognized_mouse_button_is_clicked_", resourceCulture);
             }
         }
         
@@ -170,6 +170,15 @@ namespace TeamViewerPopupBlocker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy email to clipboard.
+        /// </summary>
+        internal static string AboutBox_SetControlToolTippText_Copy_email_to_clipboard {
+            get {
+                return ResourceManager.GetString("AboutBox_SetControlToolTippText_Copy_email_to_clipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         internal static string AboutBox_TxtDesc_Text {
@@ -194,6 +203,15 @@ namespace TeamViewerPopupBlocker.Properties {
         internal static string AddWindowNam_InfoBtnClick {
             get {
                 return ResourceManager.GetString("AddWindowNam_InfoBtnClick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to save the changes?.
+        /// </summary>
+        internal static string AddWindowNameForm_AddWindowNameFormFormClosing_Do_you_want_to_save_the_changes_ {
+            get {
+                return ResourceManager.GetString("AddWindowNameForm_AddWindowNameFormFormClosing_Do_you_want_to_save_the_changes_", resourceCulture);
             }
         }
         
@@ -317,9 +335,19 @@ namespace TeamViewerPopupBlocker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon appIcon {
+        internal static System.Drawing.Icon app_icon_default {
             get {
-                object obj = ResourceManager.GetObject("appIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("app_icon_default", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon app_icon_turned_off {
+            get {
+                object obj = ResourceManager.GetObject("app_icon_turned_off", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -330,6 +358,15 @@ namespace TeamViewerPopupBlocker.Properties {
         internal static string AvailableWindowsForm_InitializeComponent_Add_Window_Name {
             get {
                 return ResourceManager.GetString("AvailableWindowsForm_InitializeComponent_Add_Window_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Available Windows.
+        /// </summary>
+        internal static string AvailableWindowsForm_InitializeComponent_Available_Windows {
+            get {
+                return ResourceManager.GetString("AvailableWindowsForm_InitializeComponent_Available_Windows", resourceCulture);
             }
         }
         
@@ -357,6 +394,16 @@ namespace TeamViewerPopupBlocker.Properties {
         internal static string AvaliableWindowsForm_Text {
             get {
                 return ResourceManager.GetString("AvaliableWindowsForm_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap check_for_updates {
+            get {
+                object obj = ResourceManager.GetObject("check_for_updates", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -393,9 +440,9 @@ namespace TeamViewerPopupBlocker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Donate_Button_Hover {
+        internal static System.Drawing.Bitmap donate_button_hover {
             get {
-                object obj = ResourceManager.GetObject("Donate_Button_Hover", resourceCulture);
+                object obj = ResourceManager.GetObject("donate_button_hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,9 +450,9 @@ namespace TeamViewerPopupBlocker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Donate_Button_Normal {
+        internal static System.Drawing.Bitmap donate_button_normal {
             get {
-                object obj = ResourceManager.GetObject("Donate_Button_Normal", resourceCulture);
+                object obj = ResourceManager.GetObject("donate_button_normal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -421,12 +468,11 @@ namespace TeamViewerPopupBlocker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to The exception that is adding to log is null..
         /// </summary>
-        internal static System.Drawing.Bitmap license {
+        internal static string LogSystem_AddToLog_The_exception_that_is_adding_to_log_is_null_ {
             get {
-                object obj = ResourceManager.GetObject("license", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("LogSystem_AddToLog_The_exception_that_is_adding_to_log_is_null_", resourceCulture);
             }
         }
         
@@ -445,6 +491,15 @@ namespace TeamViewerPopupBlocker.Properties {
         internal static string MainForm_InitializeComponent_Add_Window_Name {
             get {
                 return ResourceManager.GetString("MainForm_InitializeComponent_Add_Window_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check for updates.
+        /// </summary>
+        internal static string MainForm_InitializeComponent_Check_for_updates {
+            get {
+                return ResourceManager.GetString("MainForm_InitializeComponent_Check_for_updates", resourceCulture);
             }
         }
         
@@ -494,21 +549,21 @@ namespace TeamViewerPopupBlocker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to TeamViewer Popup Blocker.
         /// </summary>
-        internal static System.Drawing.Bitmap Question_Mark {
+        internal static string Program_Name {
             get {
-                object obj = ResourceManager.GetObject("Question_Mark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("Program_Name", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TeamViewer Popup Blocker.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static string Settings_ProgramName {
+        internal static System.Drawing.Bitmap question_mark {
             get {
-                return ResourceManager.GetString("Settings_ProgramName", resourceCulture);
+                object obj = ResourceManager.GetObject("question_mark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -542,6 +597,15 @@ namespace TeamViewerPopupBlocker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Commercial use detected.
+        /// </summary>
+        internal static string TeamViewer_WindowName_Commercial_use_detected {
+            get {
+                return ResourceManager.GetString("TeamViewer_WindowName_Commercial_use_detected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Commercial use suspected.
         /// </summary>
         internal static string TeamViewer_WindowName_Commercial_use_suspected {
@@ -565,6 +629,25 @@ namespace TeamViewerPopupBlocker.Properties {
         internal static string TeamViewer_WindowName_Unable_to_connect {
             get {
                 return ResourceManager.GetString("TeamViewer_WindowName_Unable_to_connect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your version ({0}) is outdated. 
+        ///Do you like to download latest version ({1})?.
+        /// </summary>
+        internal static string UpdateNotifier_CompareVersionNumbers_Download_New {
+            get {
+                return ResourceManager.GetString("UpdateNotifier_CompareVersionNumbers_Download_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your version is up to date..
+        /// </summary>
+        internal static string UpdateNotifier_CompareVersionNumbers_Your_version_is_up_to_date_ {
+            get {
+                return ResourceManager.GetString("UpdateNotifier_CompareVersionNumbers_Your_version_is_up_to_date_", resourceCulture);
             }
         }
     }

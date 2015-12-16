@@ -1,7 +1,13 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="AssemblyInfo.cs" company="Zhivko Kabaivanov">
+//     Copyright (c) Zhivko Kabaivanov. All rights reserved.
+// </copyright>
+// <author>Zhivko Kabaivanov</author>
+//-----------------------------------------------------------------------
+using System;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Resources;
+using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -9,9 +15,9 @@ using System.Resources;
 [assembly: AssemblyTitle("TeamViewer Popup Blocker")]
 [assembly: AssemblyDescription("Blocking the TeamViewer popup messages.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Zhivko Laflurov")]
 [assembly: AssemblyProduct("TeamViewerPopupBlocker")]
-[assembly: AssemblyCopyright("Copyright ©  2015 Zhivko Laflurov")]
+[assembly: AssemblyCopyright("Copyright © 2015 Zhivko Laflurov")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -34,5 +40,8 @@ using System.Resources;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("0.1.2.0")]
+[assembly: AssemblyFileVersion("0.1.2.0")]
 [assembly: NeutralResourcesLanguage("en")]
+
+

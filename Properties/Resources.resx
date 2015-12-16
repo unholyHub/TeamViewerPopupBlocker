@@ -117,40 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="about" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\MenuItems\about.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add_window_name" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\MenuItems\add_window_name.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Donate_Button_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Buttons\Donate_Button_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Donate_Button_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Buttons\Donate_Button_Normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\MenuItems\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\icon.asordered.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="start" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\MenuItems\start.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\MenuItems\stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Question_Mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Buttons\Question_Mark.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="copy_email" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\MenuItems\copy_email.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="license" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\MenuItems\license.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Program_MsgBox" xml:space="preserve">
     <value>Another instance is already running.</value>
     <comment>for start of app</comment>
@@ -169,12 +135,6 @@
   </data>
   <data name="AddWindowNameForm_SaveBtnClick" xml:space="preserve">
     <value>Please, close this other to start the blocking.</value>
-  </data>
-  <data name="copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\MenuItems\copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\MenuItems\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TeamViewer_WindowName_Commercial_use" xml:space="preserve">
     <value>Commercial use</value>
@@ -198,16 +158,13 @@
   <data name="AboutBox_OkBtn_Text" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="AboutBox_LblCopyright___Text" xml:space="preserve">
-    <value>Copyright @ Zhivko Laflurov</value>
-  </data>
   <data name="AboutBox_TxtDesc_Text" xml:space="preserve">
     <value>Description</value>
   </data>
   <data name="AboutBox_LblEmail_Text" xml:space="preserve">
     <value>jivko89@yahoo.com</value>
   </data>
-  <data name="Settings_ProgramName" xml:space="preserve">
+  <data name="Program_Name" xml:space="preserve">
     <value>TeamViewer Popup Blocker</value>
   </data>
   <data name="AboutBox_CopyEmailTsmi_Copy_Email" xml:space="preserve">
@@ -261,9 +218,6 @@
   <data name="MainForm_InitializeComponent_Exit" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="AboutBox_InitializeComponent_Copyright___Zhivko_Laflurov" xml:space="preserve">
-    <value>Copyright @ Zhivko Laflurov</value>
-  </data>
   <data name="AboutBox_InitializeComponent_Description" xml:space="preserve">
     <value>Description</value>
   </data>
@@ -284,5 +238,79 @@
   </data>
   <data name="AvailableWindowsForm_InitializeComponent_Refresh_List" xml:space="preserve">
     <value>Refresh List</value>
+  </data>
+  <data name="AboutBox_SetControlToolTippText_Copy_email_to_clipboard" xml:space="preserve">
+    <value>Copy email to clipboard</value>
+  </data>
+  <data name="TeamViewer_WindowName_Commercial_use_detected" xml:space="preserve">
+    <value>Commercial use detected</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="about" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\menu items\about.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_window_name" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\menu items\add_window_name.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\menu items\copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copy_email" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\menu items\copy_email.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\menu items\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="donate_button_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\button images\donate_button_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="donate_button_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\button images\donate_button_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\menu items\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="question_mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\button images\question_mark.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="start" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\menu items\start.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\menu items\stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogSystem_AddToLog_The_exception_that_is_adding_to_log_is_null_" xml:space="preserve">
+    <value>The exception that is adding to log is null.</value>
+  </data>
+  <data name="AvailableWindowsForm_InitializeComponent_Available_Windows" xml:space="preserve">
+    <value>Available Windows</value>
+  </data>
+  <data name="AboutBox_LblCopyright___Text" xml:space="preserve">
+    <value>Copyright @ Zhivko Laflurov</value>
+  </data>
+  <data name="AboutBox_EmailLinkLblClick_Unrecognized_mouse_button_is_clicked_" xml:space="preserve">
+    <value>Unrecognized mouse button is clicked.</value>
+  </data>
+  <data name="UpdateNotifier_CompareVersionNumbers_Your_version_is_up_to_date_" xml:space="preserve">
+    <value>Your version is up to date.</value>
+  </data>
+  <data name="UpdateNotifier_CompareVersionNumbers_Download_New" xml:space="preserve">
+    <value>Your version ({0}) is outdated. 
+Do you like to download latest version ({1})?</value>
+  </data>
+  <data name="check_for_updates" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Menu Items\check-for-updates.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainForm_InitializeComponent_Check_for_updates" xml:space="preserve">
+    <value>Check for updates</value>
+  </data>
+  <data name="AddWindowNameForm_AddWindowNameFormFormClosing_Do_you_want_to_save_the_changes_" xml:space="preserve">
+    <value>Do you want to save the changes?</value>
+  </data>
+  <data name="app_icon_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\app_icon_default.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="app_icon_turned_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\app_icon_turned-off.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

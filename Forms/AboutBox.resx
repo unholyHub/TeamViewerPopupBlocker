@@ -459,6 +459,9 @@
         D6yJWbJkyVIfWBOzZMmSpT6wJmbJkiVLfWBNzJIlS5a6R/b5f/LlF7T8+IGrAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="ttHover.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>129, 17</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIAAcpAAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAwgGAAAA2ubayAAAIABJ

@@ -1,8 +1,15 @@
-﻿using TeamViewerPopupBlocker.Properties;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="AboutBox.Designer.cs" company="Zhivko Kabaivanov">
+//     Copyright (c) Zhivko Kabaivanov. All rights reserved.
+// </copyright>
+// <author>Zhivko Kabaivanov</author>
+//-----------------------------------------------------------------------
 namespace TeamViewerPopupBlocker.Forms
 {
-    partial class AboutBox
+    /// <summary>
+    /// Partial class for showing the <see cref="AboutBox"/>.
+    /// </summary>
+    public partial class AboutBox
     {
         /// <summary>
         /// Required designer variable.
@@ -42,6 +49,7 @@ namespace TeamViewerPopupBlocker.Forms
             this.ctxmsEmail = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDonate = new System.Windows.Forms.Button();
+            this.ttHover = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.ctxmsEmail.SuspendLayout();
@@ -86,7 +94,7 @@ namespace TeamViewerPopupBlocker.Forms
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.logoPictureBox.TabIndex = 12;
             this.logoPictureBox.TabStop = false;
-            this.logoPictureBox.Click += new System.EventHandler(this.logoPictureBox_Click);
+            this.logoPictureBox.Click += new System.EventHandler(this.LogoPbxClick);
             // 
             // labelProductName
             // 
@@ -97,7 +105,7 @@ namespace TeamViewerPopupBlocker.Forms
             this.labelProductName.Name = "labelProductName";
             this.labelProductName.Size = new System.Drawing.Size(283, 16);
             this.labelProductName.TabIndex = 19;
-            this.labelProductName.Text = "TeamViewer Popup Blocker";
+            this.labelProductName.Text = global::TeamViewerPopupBlocker.Properties.Resources.Program_Name;
             this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelVersion
@@ -120,7 +128,7 @@ namespace TeamViewerPopupBlocker.Forms
             this.labelCopyright.Name = "labelCopyright";
             this.labelCopyright.Size = new System.Drawing.Size(283, 17);
             this.labelCopyright.TabIndex = 21;
-            this.labelCopyright.Text = "Copyright @ Zhivko Laflurov";
+            this.labelCopyright.Text = global::TeamViewerPopupBlocker.Properties.Resources.AboutBox_LblCopyright___Text; ;
             this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBoxDescription
@@ -135,7 +143,7 @@ namespace TeamViewerPopupBlocker.Forms
             this.textBoxDescription.Size = new System.Drawing.Size(283, 99);
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
-            this.textBoxDescription.Text = "Description";
+            this.textBoxDescription.Text = global::TeamViewerPopupBlocker.Properties.Resources.AddWindowNameForm_InitializeComponent_View_Opened_Windows;
             // 
             // okButton
             // 
@@ -157,9 +165,8 @@ namespace TeamViewerPopupBlocker.Forms
             this.lblEmail.Size = new System.Drawing.Size(286, 13);
             this.lblEmail.TabIndex = 25;
             this.lblEmail.TabStop = true;
-            this.lblEmail.Text = "jivko89@yahoo.com";
-            this.lblEmail.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblEmail_LinkClicked);
-            this.lblEmail.MouseClick += new System.Windows.Forms.MouseEventHandler(this.copyEmailToolStripMenuItem_Click);
+            this.lblEmail.Text = global::TeamViewerPopupBlocker.Properties.Resources.AboutBox_LblEmail_Text;
+            this.lblEmail.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EmailLinkLblClick);
             // 
             // ctxmsEmail
             // 
@@ -174,7 +181,7 @@ namespace TeamViewerPopupBlocker.Forms
             this.copyEmailToolStripMenuItem.Name = "copyEmailToolStripMenuItem";
             this.copyEmailToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.copyEmailToolStripMenuItem.Text = global::TeamViewerPopupBlocker.Properties.Resources.AboutBox_CopyEmailTsmi_Copy_Email;
-            this.copyEmailToolStripMenuItem.Click += new System.EventHandler(this.copyEmailToolStripMenuItem_Click);
+            this.copyEmailToolStripMenuItem.Click += new System.EventHandler(this.CopyEmailToolStripMenuItem_Click);
             // 
             // btnDonate
             // 
@@ -191,9 +198,9 @@ namespace TeamViewerPopupBlocker.Forms
             this.btnDonate.Size = new System.Drawing.Size(286, 77);
             this.btnDonate.TabIndex = 26;
             this.btnDonate.UseVisualStyleBackColor = true;
-            this.btnDonate.Click += new System.EventHandler(this.btnDonate_Click);
-            this.btnDonate.MouseEnter += new System.EventHandler(this.btnDonate_MouseEnter);
-            this.btnDonate.MouseLeave += new System.EventHandler(this.btnDonate_MouseLeave);
+            this.btnDonate.Click += new System.EventHandler(this.DonateBtnClick);
+            this.btnDonate.MouseEnter += new System.EventHandler(this.DonateBtnMouseEnter);
+            this.btnDonate.MouseLeave += new System.EventHandler(this.DonateBtnMouseLeave);
             // 
             // AboutBox
             // 
@@ -211,7 +218,7 @@ namespace TeamViewerPopupBlocker.Forms
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TeamViewer Popup Blocker";
+            this.Text = global::TeamViewerPopupBlocker.Properties.Resources.Program_Name;
             this.Load += new System.EventHandler(this.AboutBox_Load);
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
@@ -234,5 +241,6 @@ namespace TeamViewerPopupBlocker.Forms
         private System.Windows.Forms.ContextMenuStrip ctxmsEmail;
         private System.Windows.Forms.ToolStripMenuItem copyEmailToolStripMenuItem;
         private System.Windows.Forms.LinkLabel lblEmail;
+        private System.Windows.Forms.ToolTip ttHover;
     }
 }

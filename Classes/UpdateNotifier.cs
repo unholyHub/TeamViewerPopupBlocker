@@ -63,7 +63,11 @@ namespace TeamViewerPopupBlocker.Classes
 
             try
             {
-                File.CreateText(UpdateFilePath).Close();
+                if (!File.Exists(this.UpdateFilePath))
+                {
+                    File.CreateText(this.UpdateFilePath).Close();
+                }
+                
             }
             catch (IOException ex)
             {
@@ -169,6 +173,11 @@ namespace TeamViewerPopupBlocker.Classes
             DataFunctions.LoadStringFromFile(this.UpdateFilePath);
             string loadedString = DataFunctions.LoadedString;
 
+            if (string.IsNullOrEmpty(loadedString))
+            {
+                loadedString = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+            }
+
             DateTime outputDateTime;
             bool result = DateTime.TryParse(loadedString, out outputDateTime);
 
@@ -183,6 +192,8 @@ namespace TeamViewerPopupBlocker.Classes
             {
                 this.InformAboutNewVersion();
             }
+
+            DataFunctions.SaveTextDataToFile(this.UpdateFilePath, loadedString, false);
         }
 
         /// <summary>

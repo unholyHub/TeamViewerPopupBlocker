@@ -291,7 +291,7 @@
   <data name="AboutBox_EmailLinkLblClick_Unrecognized_mouse_button_is_clicked_" xml:space="preserve">
     <value>Unrecognized mouse button is clicked.</value>
   </data>
-  <data name="UpdateNotifier_CompareVersionNumbers_Your_version_is_up_to_date_" xml:space="preserve">
+  <data name="Your_version_is_up_to_date" xml:space="preserve">
     <value>Your version is up to date.</value>
   </data>
   <data name="UpdateNotifier_CompareVersionNumbers_Download_New" xml:space="preserve">

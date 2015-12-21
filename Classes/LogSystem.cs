@@ -41,7 +41,7 @@ namespace TeamViewerPopupBlocker.Classes
         private LogSystem()
         {
             this.logPath = Path.Combine(Settings.Instance.ProgramAppDataDirectory, "log.txt");
-            File.CreateText(this.logPath);
+            File.CreateText(this.logPath).Close();
             this.logMaxSize = 20 * 1024 * 1024;  ////20MB
         }
 

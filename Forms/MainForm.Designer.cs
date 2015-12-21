@@ -148,7 +148,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
-            this.Text = "TeamViewer Popup Blocker";
+            this.Text = global::TeamViewerPopupBlocker.Properties.Resources.Program_Name;
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);

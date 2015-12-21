@@ -89,7 +89,7 @@
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(40, 13);
             this.lblStatus.TabIndex = 3;
-            this.lblStatus.Text = "Status:";
+            this.lblStatus.Text = global::TeamViewerPopupBlocker.Properties.Resources.AddWindowNameForm_InitializeComponent_Status;
             // 
             // lblResult
             // 
@@ -174,7 +174,7 @@
             this.MinimumSize = new System.Drawing.Size(458, 294);
             this.Name = "AddWindowNameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add TeamViewer Window Name";
+            this.Text = global::TeamViewerPopupBlocker.Properties.Resources.AddWindowNameForm_InitializeComponent_Add_TeamViewer_Window_Name;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddWindowNameFormFormClosing);
             this.Load += new System.EventHandler(this.AddWindowNameFormLoad);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWindowNames)).EndInit();

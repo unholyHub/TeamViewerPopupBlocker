@@ -26,7 +26,7 @@ namespace TeamViewerPopupBlocker.Classes
 
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool EnumWindows(EnumWindowsProc callback, IntPtr extraData);
+        public static extern bool EnumWindows(EnumWindowsProc enumWindowsProc, IntPtr extraData);
 
         [DllImport("user32.dll")]
         public static extern IntPtr LoadIcon(IntPtr hInstance, IntPtr lpIconName);

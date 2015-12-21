@@ -91,7 +91,7 @@ namespace TeamViewerPopupBlocker.Classes
 
             string currentMainWindowTitle = processes[0].MainWindowTitle;
 
-            if (String.IsNullOrEmpty(currentMainWindowTitle))
+            if (string.IsNullOrEmpty(currentMainWindowTitle))
             {
                 return;
             }
@@ -108,7 +108,7 @@ namespace TeamViewerPopupBlocker.Classes
         /// <param name="windowName"> The window name that will be closed. </param>
         private static void CloseWindowByName(string windowName)
         {
-            if (String.IsNullOrEmpty(windowName))
+            if (string.IsNullOrEmpty(windowName))
             {
                 return;
             }
@@ -120,7 +120,12 @@ namespace TeamViewerPopupBlocker.Classes
                 return;
             }
 
-            NativeMethods.SendMessage(windowPtr, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
+            IntPtr sendMsgPtr =  NativeMethods.SendMessage(windowPtr, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
+
+            if (sendMsgPtr == (IntPtr) 1)
+            {
+                return;
+            }
 
             IntPtr butn = NativeMethods.FindWindowEx(windowPtr, IntPtr.Zero, "Button", "OK");
 

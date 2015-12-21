@@ -53,7 +53,7 @@ namespace TeamViewerPopupBlocker.Forms
             this.InitializeComponent();
             this.InitControls();
 
-            UpdateNotifier.Instance.NotifyForUpdate();
+            UpdateNotifier.Instance.NotifyForUpdate(true);
 
             Settings.Instance.Load();
             this.StartBlocking();
@@ -147,7 +147,7 @@ namespace TeamViewerPopupBlocker.Forms
         /// <param name="e">The <see cref="EventArgs"/> e.</param>
         private static void UpdateNotifyTimerElapsed(object sender, ElapsedEventArgs e)
         {
-            UpdateNotifier.Instance.NotifyForUpdate();
+            UpdateNotifier.Instance.NotifyForUpdate(false);
         }
         
         /// <summary>
@@ -252,7 +252,7 @@ namespace TeamViewerPopupBlocker.Forms
         /// <param name="e">The <see cref="EventArgs"/> e.</param>
         private void UpdateCheckMenuItemClick(object sender, EventArgs e)
         {
-            UpdateNotifier.Instance.NotifyForUpdate();
+            UpdateNotifier.Instance.NotifyForUpdate(false);
         }
 
         /// <summary>

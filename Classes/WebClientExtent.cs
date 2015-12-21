@@ -1,4 +1,9 @@
-﻿//-----------------------------------------------------------------------// <copyright file="WebClientExtent.cs" company="Zhivko Kabaivanov">//     Copyright (c) Zhivko Kabaivanov. All rights reserved.// </copyright>// <author>Zhivko Kabaivanov</author>//-----------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------
+// <copyright file="WebClientExtent.cs" company="Zhivko Kabaivanov">
+//     Copyright (c) Zhivko Kabaivanov. All rights reserved.
+// </copyright>
+// <author>Zhivko Kabaivanov</author>
+//-----------------------------------------------------------------------
 namespace TeamViewerPopupBlocker.Classes
 {
     using System;
@@ -28,7 +33,7 @@ namespace TeamViewerPopupBlocker.Classes
         /// </summary>
         private WebClientExtent()
         {
-            this.timeout = 60000;
+            this.timeout = 10 * 1000;
 
             this.Proxy = null;
             this.Credentials = CredentialCache.DefaultCredentials;

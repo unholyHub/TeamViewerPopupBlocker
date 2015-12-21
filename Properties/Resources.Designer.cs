@@ -645,9 +645,9 @@ namespace TeamViewerPopupBlocker.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Your version is up to date..
         /// </summary>
-        internal static string UpdateNotifier_CompareVersionNumbers_Your_version_is_up_to_date_ {
+        internal static string Your_version_is_up_to_date {
             get {
-                return ResourceManager.GetString("UpdateNotifier_CompareVersionNumbers_Your_version_is_up_to_date_", resourceCulture);
+                return ResourceManager.GetString("Your_version_is_up_to_date", resourceCulture);
             }
         }
     }

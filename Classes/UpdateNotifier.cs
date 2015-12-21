@@ -38,13 +38,13 @@ namespace TeamViewerPopupBlocker.Classes
         /// <summary>
         /// Instance of the <see cref="UpdateNotifier"/> class.
         /// </summary>
-        private static UpdateNotifier instance;        
+        private static UpdateNotifier instance;
 
         /// <summary>
         /// Field for storing the GitHub release page for the application version.
         /// </summary>
         private readonly Uri githubReleasesUri = new Uri(@"https://github.com/unholyHub/TeamViewerBlocker/releases");
-        
+
         /// <summary>
         /// Field for storing the <see cref="WebClientExtent"/> for making web requests.
         /// </summary>
@@ -93,6 +93,11 @@ namespace TeamViewerPopupBlocker.Classes
         }
 
         /// <summary>
+        /// Get or sets is the main load of the application.
+        /// </summary>
+        private bool IsMainLoad { get; set; }
+
+        /// <summary>
         /// Gets the update file path where its stored the last update check.
         /// </summary>
         private string UpdateFilePath { get; }
@@ -110,16 +115,18 @@ namespace TeamViewerPopupBlocker.Classes
         /// <summary>
         /// Gets or sets last update perform check.
         /// </summary>
-        private DateTime LastUpdateCheck { get; set; }       
+        private DateTime LastUpdateCheck { get; set; }
 
         /// <summary>
         /// Performs check for version and notifies the user for new version of the application.
         /// </summary>
-        public void NotifyForUpdate()
+        /// <param name="isMainLoad">Is the main load of the application. </param>
+        public void NotifyForUpdate(bool isMainLoad)
         {
+            IsMainLoad = isMainLoad;
             this.DownloadVersionNumberFromGitHub();
         }
-        
+
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
@@ -148,7 +155,9 @@ namespace TeamViewerPopupBlocker.Classes
         {
             DialogResult dialogResult =
                 MessageBox.Show(
-                    string.Format(Resources.UpdateNotifier_CompareVersionNumbers_Download_New,
+                    string.Format(
+                        CultureInfo.InvariantCulture,
+                        Resources.UpdateNotifier_CompareVersionNumbers_Download_New,
                         Settings.Instance.AssemblyVersion, 
                         this.DownloadedVersionNumber),
                     Resources.Program_Name,
@@ -208,23 +217,25 @@ namespace TeamViewerPopupBlocker.Classes
 
             switch (result)
             {
-                case 0:
-                case 1:
-                {
-                        MessageBox.Show(
-                            Resources.UpdateNotifier_CompareVersionNumbers_Your_version_is_up_to_date_,
-                            Resources.Program_Name,
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information,
-                            MessageBoxDefaultButton.Button1,
-                            MessageBoxOptions.DefaultDesktopOnly);
-
-                        break;
-                }
-                    
                 case -1:
                 {
                     this.InformAboutNewVersion();
+                    break;
+                }
+
+                case 0:
+                case 1:
+                {
+                    if (IsMainLoad) break;
+
+                    MessageBox.Show(
+                        Resources.Your_version_is_up_to_date,
+                        Resources.Program_Name,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information,
+                        MessageBoxDefaultButton.Button1,
+                        MessageBoxOptions.DefaultDesktopOnly);
+
                     break;
                 }
 
@@ -234,7 +245,7 @@ namespace TeamViewerPopupBlocker.Classes
                 }
             }
         }
-        
+
         /// <summary>
         /// From the <see cref="DownloadedGithubReleasesHtml"/> matches the first found version match.
         /// </summary>

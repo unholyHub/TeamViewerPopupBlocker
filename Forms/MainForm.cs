@@ -4,10 +4,13 @@
 // </copyright>
 // <author>Zhivko Kabaivanov</author>
 //-----------------------------------------------------------------------
+
+using System.Drawing;
+using TeamViewerPopupBlocker.Classes.Notifications;
+
 namespace TeamViewerPopupBlocker.Forms
 {
     using System;
-    using System.Globalization;
     using System.Timers;
     using System.Windows.Forms;
     using Classes;
@@ -21,11 +24,6 @@ namespace TeamViewerPopupBlocker.Forms
     public partial class MainForm : Form
     {
         /// <summary>
-        /// The promotion <see cref="Timer"/> for showing the donation popup balloon. 
-        /// </summary>
-        private static Timer donationTimer;
-
-        /// <summary>
         /// The blocking <see cref="Timer"/> for closing the TeamViewer windows.
         /// </summary>
         private static Timer blockingTimer;
@@ -34,7 +32,7 @@ namespace TeamViewerPopupBlocker.Forms
         /// The update <see cref="System.Timers.Timer"/> for notifying the user for new version.
         /// </summary>
         private static System.Timers.Timer updateTimer;
-        
+
         /// <summary>
         /// Allowing the <see cref="MainForm"/> to be closed.
         /// </summary>
@@ -53,10 +51,52 @@ namespace TeamViewerPopupBlocker.Forms
             this.InitializeComponent();
             this.InitControls();
 
-            UpdateNotifier.Instance.NotifyForUpdate(true);
+            UpdateNotifier.Instance.NotifyForUpdate();
+            InitNotify();
 
             Settings.Instance.Load();
             this.StartBlocking();
+        }
+
+        /// <summary>
+        /// Shows the notification message to the user.
+        /// </summary>
+        /// <param name="statusType"></param>
+        /// <param name="srcStatusText"></param>
+        /// <param name="srcStatusTimeOut"></param>
+        public void ShowNotificationMessage(StatusType statusType, string srcStatusText, int srcStatusTimeOut)
+        {
+            switch (statusType)
+            {
+                case StatusType.StartBlocking:
+                {
+                    this.tbnRed.Hide();
+                    this.tbnYellow.Hide();
+
+                    this.tbnGreen.Show(string.Empty, srcStatusText, 300, srcStatusTimeOut, 50);
+
+                    break;
+                }
+
+                case StatusType.StopBlocking:
+                {
+                    this.tbnGreen.Hide();
+                    this.tbnYellow.Hide();
+
+                    this.tbnRed.Show(string.Empty, srcStatusText, 300, srcStatusTimeOut, 50);
+                    break;
+                }
+
+                case StatusType.InfoUpdate:
+                case StatusType.InfoUpToDate:
+                {
+                    this.tbnGreen.Hide();
+                    this.tbnRed.Hide();
+                    this.tbnYellow.Show(string.Empty, srcStatusText, 300, srcStatusTimeOut, 50);
+
+                    break;
+                }
+            }
         }
 
         /// <summary>
@@ -68,7 +108,7 @@ namespace TeamViewerPopupBlocker.Forms
         /// Gets or sets the <see cref="AboutBox"/>.
         /// </summary>
         private static AboutBox AboutBox { get; set; }
-        
+
         /// <summary>
         /// Occurs before the form is closed.
         /// </summary>
@@ -76,7 +116,7 @@ namespace TeamViewerPopupBlocker.Forms
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             blockingTimer.Stop();
-            
+
             if (!allowClose)
             {
                 this.Hide();
@@ -102,18 +142,19 @@ namespace TeamViewerPopupBlocker.Forms
         /// .</param>
         protected override void SetVisibleCore(bool value)
         {
-            if(!allowVisible)
+            if (!allowVisible)
             {
                 value = false;
 
-                if (!this.IsHandleCreated) try
-                {
-                    CreateHandle();
-                }
-                catch (InvalidOperationException invalidOperationException)
-                {
-                    LogSystem.Instance.AddToLog(invalidOperationException, false);
-                }
+                if (!this.IsHandleCreated)
+                    try
+                    {
+                        CreateHandle();
+                    }
+                    catch (InvalidOperationException invalidOperationException)
+                    {
+                        LogSystem.Instance.AddToLog(invalidOperationException, false);
+                    }
             }
 
             base.SetVisibleCore(value);
@@ -131,25 +172,25 @@ namespace TeamViewerPopupBlocker.Forms
         }
 
         /// <summary>
-        /// Initialization for the blocking <see cref="Timer"/>.
-        /// </summary>
-        private static void InitBlockingTimer()
-        {
-            blockingTimer = new Timer();
-            blockingTimer.Interval = 1000;
-            blockingTimer.Tick += new EventHandler(BlockingTimerTick);
-        }
-        
-        /// <summary>
         /// Notifying the user for a new update if available. 
         /// </summary>
         /// <param name="sender">The <see cref="object"/> sender.</param>
         /// <param name="e">The <see cref="EventArgs"/> e.</param>
         private static void UpdateNotifyTimerElapsed(object sender, ElapsedEventArgs e)
         {
-            UpdateNotifier.Instance.NotifyForUpdate(false);
+            UpdateNotifier.Instance.NotifyForUpdate();
         }
-        
+
+        /// <summary>
+        /// Initialization for the blocking <see cref="Timer"/>.
+        /// </summary>
+        private static void InitBlockingTimer()
+        {
+            blockingTimer = new Timer();
+            blockingTimer.Interval = 200;
+            blockingTimer.Tick += new EventHandler(BlockingTimerTick);
+        }
+
         /// <summary>
         /// The blocking timer tick event.
         /// </summary>
@@ -168,35 +209,10 @@ namespace TeamViewerPopupBlocker.Forms
             AddWindowNameForm = new AddWindowNameForm();
             AboutBox = new AboutBox();
 
-            this.InitPromotionTimer();
             InitBlockingTimer();
             InitUpdateTimer();
-
-            this.ShowBallonTextToolTip(string.Format(CultureInfo.InvariantCulture, "Make {0} better!", Resources.Program_Name));
-
-            donationTimer.Start();
         }
 
-        /// <summary>
-        /// Initialization for the promotion <see cref="Timer"/>.
-        /// </summary>
-        private void InitPromotionTimer()
-        {
-            donationTimer = new Timer();
-            donationTimer.Interval = 60 * 60 * 1000;  // 10 min.
-            donationTimer.Tick += new EventHandler(this.PromotionTimerTick);
-        }
-        
-        /// <summary>
-        /// The blocking timer tick event.
-        /// </summary>
-        /// <param name="sender">The <see cref="object"/> sender.</param>
-        /// <param name="e">The <see cref="EventArgs"/> e.</param>
-        private void PromotionTimerTick(object sender, EventArgs e)
-        {
-            this.ShowBallonTextToolTip(string.Format(CultureInfo.InvariantCulture, "Make {0} better!", Resources.Program_Name));
-        }
-        
         /// <summary>
         /// Click event for <see cref="MenuItem"/> for starting the blocking.
         /// </summary>
@@ -231,7 +247,7 @@ namespace TeamViewerPopupBlocker.Forms
             }
 
             this.StopBlocking();
-            
+
             try
             {
                 AddWindowNameForm = new AddWindowNameForm();
@@ -241,7 +257,7 @@ namespace TeamViewerPopupBlocker.Forms
             {
                 LogSystem.Instance.AddToLog(argumentNullException, false);
             }
-            
+
             this.StartBlocking();
         }
 
@@ -252,7 +268,7 @@ namespace TeamViewerPopupBlocker.Forms
         /// <param name="e">The <see cref="EventArgs"/> e.</param>
         private void UpdateCheckMenuItemClick(object sender, EventArgs e)
         {
-            UpdateNotifier.Instance.NotifyForUpdate(false);
+            UpdateNotifier.Instance.NotifyForUpdate();
         }
 
         /// <summary>
@@ -295,7 +311,7 @@ namespace TeamViewerPopupBlocker.Forms
                 }
 
                 this.niTray.Icon = Resources.app_icon_default;
-                this.ShowBallonTextToolTip("has started blocking.");
+                ProgramStatus.Instance.AddStatus(new Status(StatusType.StartBlocking, 5000, 4000));
             }
             catch (ArgumentNullException ex)
             {
@@ -320,11 +336,11 @@ namespace TeamViewerPopupBlocker.Forms
                 }
 
                 this.niTray.Icon = Resources.app_icon_turned_off;
-                this.ShowBallonTextToolTip("has stopped blocking.");
+                ProgramStatus.Instance.AddStatus(new Status(StatusType.StopBlocking, 5000, 4000));
             }
             catch (NullReferenceException ex)
             {
-                this.ShowBallonExceptionToolTip();
+                ProgramStatus.Instance.AddStatus(new Status(StatusType.ErrorException, 5000, 4000));
                 LogSystem.Instance.AddToLog(ex, false);
             }
         }
@@ -377,6 +393,51 @@ namespace TeamViewerPopupBlocker.Forms
             {
                 this.OpenAboutBox();
             }
+        }
+
+        private TaskbarNotifier tbnGreen { get; set; }
+
+        private TaskbarNotifier tbnRed { get; set; }
+
+        private TaskbarNotifier tbnYellow { get; set; }
+
+        private readonly Timer timerProgramStatus = new Timer();
+
+        private void InitNotify()
+        {
+            tbnGreen = new TaskbarNotifier();
+            tbnRed = new TaskbarNotifier();
+            tbnYellow = new TaskbarNotifier();
+
+            this.timerProgramStatus.Tick += new EventHandler(this.OnStatusCheck); //StatusProcessing
+            this.timerProgramStatus.Interval = 100;
+            this.timerProgramStatus.Start();
+
+            InitNotify(this.tbnGreen, Resources.notification_green);
+            InitNotify(this.tbnRed, Resources.notification_red);
+            InitNotify(this.tbnYellow, Resources.notification_yellow);
+        }
+
+        private void InitNotify(TaskbarNotifier taskbarNotifier, Image inputImage)
+        {
+            taskbarNotifier.SetBackgroundBitmap(inputImage, Color.FromArgb(255, 0, 255));
+            taskbarNotifier.SetCloseBitmap(
+                Resources.close_buttons,
+                Color.FromArgb(255, 0, 255),
+                new Point(inputImage.Width - 40, 13));
+
+            taskbarNotifier.ContentRectangle = new Rectangle(15, 30, inputImage.Width - 40, inputImage.Height - 50);
+            taskbarNotifier.CloseClickable = true;
+            taskbarNotifier.TitleClickable = false;
+            taskbarNotifier.ContentClickable = true;
+            taskbarNotifier.EnableSelectionRectangle = false;
+            taskbarNotifier.KeepVisibleOnMousOver = true;
+            taskbarNotifier.ReShowOnMouseOver = true;
+        }
+
+        private void OnStatusCheck(object source, EventArgs e)
+        {
+            ProgramStatus.Instance.GetStatus(this);
         }
     }
 }

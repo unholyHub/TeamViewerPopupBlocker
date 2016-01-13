@@ -60,7 +60,7 @@
     <ApplicationIcon>Icons\app_icon_default.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>Always</RunPostBuildEvent>
@@ -71,6 +71,10 @@
   <PropertyGroup>
     <StartupObject>TeamViewerPopupBlocker.Startup</StartupObject>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -80,6 +84,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\NativeMethods.cs" />
+    <Compile Include="Classes\Notifications\ProgramStatus.cs" />
+    <Compile Include="Classes\Notifications\Status.cs" />
+    <Compile Include="Classes\Notifications\StatusType.cs" />
+    <Compile Include="Classes\Notifications\TaskbarNotifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Classes\WebClientExtent.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -146,6 +156,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Icons\Icon-default.xcf" />
+    <None Include="Notification Images\Basic.xcf" />
     <None Include="README.md" />
     <None Include="TeamViewerPopupBlocker.csproj.DotSettings" />
     <None Include="TeamViewerPopupBlocker.suo" />
@@ -184,6 +195,10 @@
     <Content Include="Menu Items\exit.png" />
     <Content Include="Menu Items\start.png" />
     <Content Include="Menu Items\stop.png" />
+    <Content Include="Notification Images\close.bmp" />
+    <None Include="Notification Images\notification-yellow.png" />
+    <None Include="Notification Images\notification-green.png" />
+    <None Include="Notification Images\notification-red.png" />
     <Content Include="TeamViewerPopupBlocker.csproj.DotSettings.user" />
     <Content Include="TeamViewerPopupBlocker.sln.DotSettings.user" />
   </ItemGroup>

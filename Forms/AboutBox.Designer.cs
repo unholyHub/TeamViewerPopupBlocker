@@ -128,7 +128,7 @@ namespace TeamViewerPopupBlocker.Forms
             this.labelCopyright.Name = "labelCopyright";
             this.labelCopyright.Size = new System.Drawing.Size(283, 17);
             this.labelCopyright.TabIndex = 21;
-            this.labelCopyright.Text = global::TeamViewerPopupBlocker.Properties.Resources.AboutBox_LblCopyright___Text; ;
+            this.labelCopyright.Text = global::TeamViewerPopupBlocker.Properties.Resources.AboutBox_LblCopyright___Text;
             this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBoxDescription

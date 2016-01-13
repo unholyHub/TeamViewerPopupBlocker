@@ -410,6 +410,16 @@ namespace TeamViewerPopupBlocker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_buttons {
+            get {
+                object obj = ResourceManager.GetObject("close_buttons", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap copy {
             get {
                 object obj = ResourceManager.GetObject("copy", resourceCulture);
@@ -540,6 +550,36 @@ namespace TeamViewerPopupBlocker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap notification_green {
+            get {
+                object obj = ResourceManager.GetObject("notification_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap notification_red {
+            get {
+                object obj = ResourceManager.GetObject("notification_red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap notification_yellow {
+            get {
+                object obj = ResourceManager.GetObject("notification_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Another instance is already running..
         /// </summary>
         internal static string Program_MsgBox {
@@ -554,6 +594,33 @@ namespace TeamViewerPopupBlocker.Properties {
         internal static string Program_Name {
             get {
                 return ResourceManager.GetString("Program_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Started blocking.
+        /// </summary>
+        internal static string ProgramStatus_GetStatus_Blocking_started {
+            get {
+                return ResourceManager.GetString("ProgramStatus_GetStatus_Blocking_started", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stopped blocking.
+        /// </summary>
+        internal static string ProgramStatus_GetStatus_Blocking_stopped {
+            get {
+                return ResourceManager.GetString("ProgramStatus_GetStatus_Blocking_stopped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exception was thrown!.
+        /// </summary>
+        internal static string ProgramStatus_GetStatus_Exception_was_thrown_ {
+            get {
+                return ResourceManager.GetString("ProgramStatus_GetStatus_Exception_was_thrown_", resourceCulture);
             }
         }
         

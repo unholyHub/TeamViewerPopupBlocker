@@ -4,6 +4,9 @@
 // </copyright>
 // <author>Zhivko Kabaivanov</author>
 //-----------------------------------------------------------------------
+
+using TeamViewerPopupBlocker.Classes.Notifications;
+
 namespace TeamViewerPopupBlocker.Classes
 {
     using System;
@@ -93,11 +96,6 @@ namespace TeamViewerPopupBlocker.Classes
         }
 
         /// <summary>
-        /// Get or sets is the main load of the application.
-        /// </summary>
-        private bool IsMainLoad { get; set; }
-
-        /// <summary>
         /// Gets the update file path where its stored the last update check.
         /// </summary>
         private string UpdateFilePath { get; }
@@ -121,9 +119,8 @@ namespace TeamViewerPopupBlocker.Classes
         /// Performs check for version and notifies the user for new version of the application.
         /// </summary>
         /// <param name="isMainLoad">Is the main load of the application. </param>
-        public void NotifyForUpdate(bool isMainLoad)
+        public void NotifyForUpdate()
         {
-            IsMainLoad = isMainLoad;
             this.DownloadVersionNumberFromGitHub();
         }
 
@@ -153,25 +150,13 @@ namespace TeamViewerPopupBlocker.Classes
         /// </summary>
         private void InformAboutNewVersion()
         {
-            DialogResult dialogResult =
-                MessageBox.Show(
-                    string.Format(
+            ProgramStatus.Instance.AddStatus(
+                new Status(
+                    StatusType.InfoUpdate, 5000, 4000, string.Format(
                         CultureInfo.InvariantCulture,
                         Resources.UpdateNotifier_CompareVersionNumbers_Download_New,
-                        Settings.Instance.AssemblyVersion, 
-                        this.DownloadedVersionNumber),
-                    Resources.Program_Name,
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);
-
-            if (dialogResult != DialogResult.Yes)
-            {
-                return;
-            }
-
-            Process.Start(this.githubReleasesUri.OriginalString);
+                        Settings.Instance.AssemblyVersion,
+                        this.DownloadedVersionNumber)));
         }
 
         /// <summary>
@@ -226,16 +211,7 @@ namespace TeamViewerPopupBlocker.Classes
                 case 0:
                 case 1:
                 {
-                    if (IsMainLoad) break;
-
-                    MessageBox.Show(
-                        Resources.Your_version_is_up_to_date,
-                        Resources.Program_Name,
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information,
-                        MessageBoxDefaultButton.Button1,
-                        MessageBoxOptions.DefaultDesktopOnly);
-
+                    ProgramStatus.Instance.AddStatus(new Status(StatusType.InfoUpToDate, 5000, 4000));
                     break;
                 }
 

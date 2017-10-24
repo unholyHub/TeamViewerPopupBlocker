@@ -27,7 +27,7 @@ namespace TeamViewerPopupBlocker
                     var docReaderProcess = Process.GetProcessesByName(Resources.Program_Name);
 
                     var mainProcess = Process.GetCurrentProcess();
-
+                    
                     foreach (var currentProcess in docReaderProcess)
                     {
                         if (currentProcess.Id != mainProcess.Id)
